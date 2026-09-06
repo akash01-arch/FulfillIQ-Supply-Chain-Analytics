@@ -62,8 +62,8 @@ Business Recommendations
 | Data Cleaning             | ✅ Completed    |
 | Feature Engineering       | ✅ Completed    |
 | Exploratory Data Analysis | ✅ Completed    |
-| SQL Business Analysis     | 🔄 In Progress |
-| Power BI Dashboard        | 🔄 In Progress |
+| SQL Business Analysis     | ✅ Completed    |
+| Power BI Dashboard        | ✅ Completed    |
 | Machine Learning          | ⏳ Planned      |
 | Model Evaluation          | ⏳ Planned      |
 | Model Deployment          | ⏳ Planned      |
