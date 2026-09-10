@@ -1,275 +1,363 @@
-# Supply Chain Analysis & Intelligence Platform
+# FulfillIQ
 
-## 📌 Project Status
+## Supply Chain Delivery & Profitability Intelligence
 
-**Work in Progress**
+**An end-to-end data analytics project analyzing 180K+ supply chain orders to identify delivery bottlenecks, profitability drivers, customer behavior, and operational performance.**
 
-This project is an end-to-end **Supply Chain Analytics and Intelligence Platform** built to analyze supply chain performance, delivery risk, shipping efficiency, sales, and profitability.
-
-The project is currently under development, with different stages being completed progressively.
+**Tech Stack:** Python • SQL • Pandas • NumPy • Statistical Analysis • Scikit-learn • Power BI
 
 ---
 
-## 🎯 Project Objective
+## 📌 Project Overview
 
-The main objective of this project is to use **Data Analytics, SQL, Power BI, and Machine Learning** to understand supply chain problems and provide data-driven business insights.
+FulfillIQ is an end-to-end supply chain analytics project focused on understanding the business and operational factors affecting **delivery performance and profitability**.
 
-The project aims to answer questions such as:
+The project analyzes a large supply chain dataset and follows a complete analytics workflow—from data understanding and cleaning to feature engineering, exploratory analysis, statistical validation, root-cause analysis, and interactive dashboard development.
 
-* Where are delivery delays occurring?
-* Which shipping modes perform better?
-* Which markets and regions have high delivery risk?
-* Which customer segments and product categories contribute to operational problems?
-* How do discounts affect profitability?
-* Can machine learning predict delivery risk?
-* How can predictive insights support supply chain decisions?
+The objective is not only to describe what happened, but to investigate **why it happened** and identify the factors that should be prioritized for business decision-making.
 
 ---
 
-## 🔄 Planned Project Workflow
+## 🎯 Business Problem
+
+The analysis focuses on the following business questions:
+
+* What is the overall delivery performance of the business?
+* Which factors are most strongly associated with late deliveries?
+* How do discounts influence profitability?
+* Which products, customers, and regions contribute most to business performance?
+* Where are the major operational and profitability risks?
+* How can these findings be translated into actionable business insights?
+
+---
+
+## 📊 Dataset
+
+The dataset contains approximately **180K+ order-level records** with **53 raw features**, covering the period **2015–2018**.
+
+The data includes information related to:
+
+* Orders and sales
+* Profit and profitability
+* Customers
+* Products and categories
+* Shipping and delivery
+* Geographic regions
+* Discounts and pricing
+* Operational attributes
+
+---
+
+## 🔄 Analytics Workflow
 
 ```text
 Raw Data
-   ↓
+   │
+   ▼
 Data Understanding
-   ↓
-Data Cleaning
-   ↓
-Feature Engineering
-   ↓
+   │
+   ▼
+Data Cleaning & Validation
+   │
+   ▼
 Exploratory Data Analysis
-   ↓
-SQL Business Analysis
-   ↓
+   │
+   ▼
+Feature Engineering
+   │
+   ▼
+Statistical Analysis
+   │
+   ▼
+Root Cause Analysis
+   │
+   ▼
+Feature Importance Analysis
+   │
+   ▼
+Business Insights
+   │
+   ▼
 Power BI Dashboard
-   ↓
-Machine Learning
-   ↓
-Model Evaluation
-   ↓
-Model Deployment
-   ↓
-Business Recommendations
 ```
 
 ---
 
-## 📊 Current Progress
+## 🧹 Data Preparation
 
-| Phase                     | Status         |
-| ------------------------- | -------------- |
-| Data Understanding        | ✅ Completed    |
-| Data Cleaning             | ✅ Completed    |
-| Feature Engineering       | ✅ Completed    |
-| Exploratory Data Analysis | ✅ Completed    |
-| SQL Business Analysis     | ✅ Completed    |
-| Power BI Dashboard        | ✅ Completed    |
-| Machine Learning          | ⏳ Planned      |
-| Model Evaluation          | ⏳ Planned      |
-| Model Deployment          | ⏳ Planned      |
-| Final Business Report     | ⏳ Planned      |
+A structured data-cleaning and validation process was performed to prepare the dataset for analysis.
 
----
+### Key Steps
 
-## 🗂️ Dataset
+* Inspected dataset structure and data types
+* Identified and handled missing values
+* Removed irrelevant and low-value columns
+* Standardized categorical variables
+* Converted date and numerical fields
+* Checked duplicate and inconsistent records
+* Applied business-rule validation
+* Investigated extreme observations
 
-The project uses the **DataCo Supply Chain Dataset** containing information related to:
+### Outlier Handling
 
-* Orders
-* Customers
-* Products
-* Shipping
-* Delivery
-* Sales
-* Profit
-* Discounts
-* Markets
-* Regions
-* Customer Segments
+Extreme profit observations were identified using an **IQR-based approach**.
+
+Instead of automatically removing all extreme values, they were retained and flagged for investigation because statistically unusual observations may still represent valid business transactions.
 
 ---
 
-## 🔍 Analysis Areas
+## ⚙️ Feature Engineering
 
-The project focuses on several important supply chain areas:
+Engineered **100+ analytical features** to support deeper business and operational analysis.
+
+### Delivery Performance
+
+* Shipping delay
+* Late-delivery indicators
+* Early-delivery indicators
+* Delivery performance categories
+
+### Profitability
+
+* Profit margin
+* Loss-making order flags
+* Profitability categories
+
+### Customer Analytics
+
+* Customer order frequency
+* Total customer sales
+* Average order value
+* Customer value segments
+* Repeat customer indicators
+
+### Product Analytics
+
+* Product revenue
+* Product order volume
+* Average product profit
+* Product sales ranking
+* Product demand categories
+
+### Risk Indicators
+
+* Delivery risk scores
+* High-risk order indicators
+* High-discount indicators
+
+---
+
+## 📈 Exploratory Data Analysis
+
+Exploratory analysis was performed to identify patterns across:
+
+* Revenue and order trends
+* Profit and profit margins
+* Delivery performance
+* Late versus on-time orders
+* Shipping modes
+* Product and category performance
+* Customer purchasing behavior
+* Regional performance
+* Discount patterns
+* Loss-making orders
+
+---
+
+## 🔍 Root Cause Analysis
+
+The project goes beyond descriptive dashboarding by investigating potential drivers of delivery performance.
+
+Categorical relationships with late delivery were evaluated using:
+
+* **Chi-Square Tests**
+* **Cramér's V**
+
+Feature importance techniques were also applied using:
+
+* **Decision Trees**
+* **Random Forest**
+
+### Key Finding
+
+**Shipping Mode showed the strongest observed association with late delivery, with a Cramér's V of approximately 0.433.**
+
+Compared with other categorical factors evaluated, Shipping Mode showed a substantially stronger relationship with delivery outcomes.
+
+This finding was further supported through feature-importance analysis, highlighting shipping-related factors as key operational drivers worth prioritizing.
+
+---
+
+## 🧪 Statistical Analysis
+
+Statistical methods were used to validate business findings rather than relying solely on visual patterns or descriptive statistics.
+
+### Methods Applied
+
+* Two-proportion tests
+* Welch's t-test
+* Chi-Square tests
+* ANOVA
+* Tukey HSD
+* Pearson correlation
+* Spearman correlation
+* Confidence intervals
+* Effect-size analysis
+* Multiple-comparison considerations
+
+### Business Questions Tested
+
+* Does late-delivery performance differ across shipping modes?
+* Do high-discount orders differ in profitability?
+* Is there a difference between weekend and weekday delivery performance?
+* Do profit margins vary across regions?
+* What is the relationship between discount rate and profit margin?
+
+The analysis considered **statistical significance, effect size, confidence intervals, and practical business significance** to avoid relying only on p-values.
+
+---
+
+## 📊 Key Insights
 
 ### 🚚 Delivery Performance
 
-* Delivery status
-* Delivery time
-* Scheduled delivery time
-* Delivery delay
-* Late-delivery risk
+The analysis identified a **57.28% late-delivery rate**, highlighting delivery reliability as a major operational concern.
 
-### 📦 Shipping Analysis
+### 📦 Shipping Mode
 
-* Shipping mode
-* Order volume
-* Delivery performance
-* Sales
-* Profit
-* Late-delivery risk
+Shipping Mode was identified as the strongest observed categorical driver of late delivery:
 
-### 🌎 Regional Analysis
+> **Cramér's V ≈ 0.433**
 
-* Market
-* Order region
-* Customer segment
-* Product category
+This indicates that shipping-related operational decisions should be prioritized when investigating delivery delays.
 
-### 💰 Sales & Profitability
+### 💰 Profitability
 
-* Sales
-* Order profit
-* Profit margin
-* Discount
-* Discount rate
+Overall profitability was analyzed separately from revenue to identify situations where higher sales did not necessarily result in stronger profit margins.
 
----
+### 🏷️ Discount Analysis
 
-## 🤖 Planned Machine Learning
+The relationship between discounting and profitability was investigated using statistical tests and correlation analysis to distinguish statistically significant results from practically meaningful business effects.
 
-A machine learning component will be developed to predict **delivery risk** based on relevant order, customer, shipping, and product characteristics.
+### 👥 Customer & Product Analysis
 
-### Planned ML Workflow
+Customer and product features were engineered to analyze:
 
-```text
-Feature Engineering
-       ↓
-Feature Selection
-       ↓
-Train-Test Split
-       ↓
-Model Training
-       ↓
-Model Comparison
-       ↓
-Model Evaluation
-       ↓
-Best Model
-       ↓
-Deployment
-```
-
-Potential models include:
-
-* Logistic Regression
-* Random Forest
-* Gradient Boosting
-* XGBoost
+* High-value customers
+* Repeat purchasing behavior
+* Customer purchasing frequency
+* Product revenue contribution
+* Product profitability
+* Demand patterns
 
 ---
 
-## 📊 Planned Power BI Dashboard
+## 📉 Power BI Dashboard
 
-The final dashboard will provide insights into:
+A **5-page interactive Power BI dashboard** was developed to communicate the analytical findings.
 
-* Total Orders
-* Total Sales
-* Total Profit
-* Late Orders
-* Late Delivery Rate
-* Average Delivery Time
-* Shipping Mode Performance
-* Market Performance
-* Regional Risk
-* Customer Segment Performance
-* Product Category Performance
+### Dashboard Coverage
 
----
+**1. Executive Overview**
+High-level KPIs covering orders, revenue, profit, profitability, and delivery performance.
 
-## 🛠️ Tech Stack
+**2. Delivery Performance**
+Late-delivery analysis, shipping mode performance, delivery trends, and operational risk.
 
-### Data Analysis
+**3. Profitability Analysis**
+Revenue, profit, profit margin, discount analysis, and loss-making orders.
 
-* Python
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
+**4. Customer & Product Analysis**
+Customer value, repeat behavior, product performance, and category-level insights.
 
-### Database & SQL
+**5. Regional & Operational Analysis**
+Regional performance, shipping patterns, operational trends, and risk indicators.
 
-* MySQL
-* MySQL Workbench
 
-### Visualization
+## 🛠️ Technology Stack
 
-* Power BI
-* DAX
-* Power Query
-
-### Machine Learning
-
-* Scikit-learn
-* XGBoost
-
-### Development
-
-* Jupyter Notebook
-* VS Code
-* Git
-* GitHub
-
-### Planned Deployment
-
-* Streamlit / API-based deployment
+| Category                  | Technologies                               |
+| ------------------------- | ------------------------------------------ |
+| **Programming**           | Python, SQL                                |
+| **Data Analysis**         | Pandas, NumPy                              |
+| **Visualization**         | Matplotlib, Seaborn, Plotly                |
+| **Statistics**            | SciPy, Statsmodels                         |
+| **Machine Learning**      | Scikit-learn, Decision Tree, Random Forest |
+| **Business Intelligence** | Power BI, DAX, Power Query                 |
+| **Development Tools**     | Jupyter Notebook, Git, GitHub, VS Code     |
 
 ---
 
 ## 📁 Project Structure
 
 ```text
-Supply-Chain-Analysis/
+FulfillIQ/
 │
-├── Datasets/
-│   ├── Raw Data/
-│   ├── Cleaned Data/
-│   └── Processed Data/
+├── data/
+│   └── raw_data/
 │
-├── Notebooks/
-│   ├── 01_Data_Understanding.ipynb
-│   ├── 02_Data_Cleaning.ipynb
-│   ├── 03_Feature_Engineering.ipynb
-│   └── 04_Exploratory_Data_Analysis.ipynb
+├── notebooks/
+│   ├── 01_data_understanding.ipynb
+│   ├── 02_data_cleaning.ipynb
+│   ├── 03_feature_engineering.ipynb
+│   ├── 04_eda.ipynb
+│   ├── 05_root_cause_analysis.ipynb
+│   └── 06_statistical_analysis.ipynb
 │
-├── SQL Business Analysis/
+├── dashboard/
+│   └── FulfillIQ.pbix
 │
-├── Dashboards/
+├── screenshots/
+│   ├── dashboard_1.png
+│   ├── dashboard_2.png
+│   ├── dashboard_3.png
+│   ├── dashboard_4.png
+│   └── dashboard_5.png
 │
-├── ML/
-│
-├── Deployment/
-│
-├── Reports/
-│
-└── README.md
+├── README.md
+└── requirements.txt
 ```
 
 ---
 
-## 📈 Project Goal
+## 💡 Business Recommendations
 
-The long-term goal of this project is to develop a complete **Supply Chain Intelligence Platform** that combines:
+Based on the analysis, the following areas should be prioritized:
 
-**Descriptive Analytics + Diagnostic Analytics + Predictive Analytics + Business Intelligence**
-
-The final system will help identify operational risks, understand supply chain performance, predict potential delivery problems, and support data-driven decision-making.
-
----
-
-## 🚧 Development Status
-
-This repository is actively being developed.
-
-New analysis, SQL queries, dashboards, machine learning models, and deployment components will be added as the project progresses.
+1. **Review shipping operations** to address the high late-delivery rate.
+2. **Investigate shipping modes with weaker delivery performance** and identify operational bottlenecks.
+3. **Evaluate discount strategies alongside profit margin**, rather than focusing only on sales volume.
+4. **Monitor loss-making orders and low-margin segments** to identify profitability risks.
+5. **Use customer segmentation** to identify high-value and repeat customers.
+6. **Track product and regional performance** to support operational and commercial decisions.
+7. **Monitor delivery-risk indicators** to identify potentially problematic orders earlier.
 
 ---
 
-## 👨‍💻 Author
+## 🚀 Skills Demonstrated
+
+This project demonstrates hands-on experience with:
+
+* Data Cleaning and Validation
+* Exploratory Data Analysis
+* SQL and Business Analysis
+* Feature Engineering
+* Statistical Hypothesis Testing
+* Effect-Size Interpretation
+* Root Cause Analysis
+* Decision Tree and Random Forest Feature Importance
+* Business KPI Development
+* Power BI Dashboard Development
+* Data Visualization
+* Translating Analysis into Business Insights
+
+---
+
+## 👤 Author
 
 **Akash More**
+Final-Year BCA (Data Science) Student | Aspiring Data Analyst
 
-Aspiring Data Analyst | Python | SQL | Power BI | Machine Learning
+**Skills:** SQL • Python • Power BI • Excel • Statistics • Data Analytics
 
----
+
