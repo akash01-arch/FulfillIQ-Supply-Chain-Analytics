@@ -1,0 +1,6 @@
+review_top,orders_reviewed,share_truly_late,late_orders_caught,share_of_all_late_caught,lift_vs_random
+5%,1805,1.0,1805,0.0915,1.8297
+10%,3610,1.0,3610,0.183,1.8297
+20%,7220,0.9127,6590,0.334,1.67
+30%,10830,0.8693,9414,0.4771,1.5904
+50%,18051,0.7171,12945,0.656,1.3121

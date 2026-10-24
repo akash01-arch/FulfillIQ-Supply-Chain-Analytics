@@ -1,0 +1,4 @@
+,cv_roc_auc,cv_roc_auc_std,cv_pr_auc,seconds
+Logistic Regression,0.7409,0.005,0.8165,11.3427
+Random Forest,0.7397,0.0048,0.8146,67.2993
+Hist Gradient Boosting,0.7326,0.0067,0.8096,79.0858

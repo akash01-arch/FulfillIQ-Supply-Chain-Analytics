@@ -1,0 +1,4 @@
+,train_roc_auc,cv_roc_auc,val_roc_auc,val_pr_auc,val_brier,val_recall@80%prec,overfit_gap,gain_vs_planner_rule
+Logistic Regression (tuned),0.7461,0.7409,0.732,0.8093,0.1977,0.573,0.0142,0.0056
+Random Forest (tuned),0.7826,0.7405,0.7294,0.8085,0.1963,0.5731,0.0532,0.003
+Hist Gradient Boosting,0.891,0.7326,0.7264,0.8029,0.2027,0.5634,0.1646,-0.0

@@ -1,0 +1,16 @@
+order_id,order date (DateOrders),late_probability,shipping_mode,scheduled_days,Order Region,Department Name,actually_late
+70718,2017-10-29 07:18:00,0.976,First Class,1,Southern Europe,Technology,1
+63087,2017-07-09 21:50:00,0.973,First Class,1,Northern Europe,Fan Shop,1
+68296,2017-09-23 22:46:00,0.973,First Class,1,Western Europe,Fan Shop,1
+62805,2017-07-05 19:02:00,0.973,First Class,1,Southern Europe,Fitness,1
+64981,2017-08-06 13:23:00,0.972,First Class,1,Northern Europe,Outdoors,1
+63290,2017-07-12 20:57:00,0.972,First Class,1,Western Europe,Footwear,1
+66483,2017-08-28 11:36:00,0.972,First Class,1,Western Europe,Fitness,1
+61877,2017-06-22 05:55:00,0.972,First Class,1,Western Europe,Outdoors,1
+59436,2017-05-17 14:43:00,0.971,First Class,1,Caribbean,Fan Shop,1
+59436,2017-05-17 14:43:00,0.971,First Class,1,Caribbean,Apparel,1
+65989,2017-08-21 06:32:00,0.971,First Class,1,Western Europe,Outdoors,1
+65698,2017-08-17 00:35:00,0.971,First Class,1,Northern Europe,Outdoors,1
+62221,2017-06-27 06:26:00,0.971,First Class,1,Western Europe,Footwear,1
+64870,2017-08-04 22:30:00,0.971,First Class,1,Western Europe,Outdoors,1
+61623,2017-06-18 12:55:00,0.971,First Class,1,Western Europe,Outdoors,1
