@@ -1,6 +1,6 @@
 # FulfillIQ — Business Problem & Project Scope
 
-**Project:** FulfillIQ — Supply Chain Delivery & Profitability Intelligence  
+**Project:** FulfillIQ — Supply Chain Analytics  
 **Domain:** E-commerce, supply chain operations and commercial analytics  
 **Dataset:** DataCo Global Supply Chain (historical benchmark dataset)  
 **Tools used across the project:** Python, Pandas, NumPy, SciPy, scikit-learn, SQL and Power BI
